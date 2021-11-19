@@ -184,7 +184,6 @@ def event_handle(event):
 
             replyObj = TextSendMessage(text=json_headers)
             line_bot_api.reply_message(rtoken, replyObj)
-           
     elif msgType == "image":
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
