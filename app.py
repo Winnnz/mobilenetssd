@@ -160,6 +160,12 @@ def event_handle(event,json_line):
             line_bot_api.reply_message(rtoken, replyObj)
         elif (msg == "ไม่ซื้อละแพงไป") :
             replyObj = TextSendMessage(text="ใจเย็นดิลดให้เหลือ3เม็ด3,000พอ")
+            line_bot_api.reply_message(rtoken, elif msg == "covid" :
+        elif msg == "covid" :   
+            url = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-all"
+            response = requests.get(url)
+            response = response.json()
+            replyObj = TextSendMessage(text=str(response))
             line_bot_api.reply_message(rtoken, replyObj)
         else : 
             headers = request.headers
