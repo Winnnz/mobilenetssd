@@ -125,7 +125,6 @@ def reply(intent,text,reply_token,id,disname):
     line_bot_api.reply_message(reply_token,text_message)
 
 def event_handle(event,json_line):
-    print(event)
     try:
         userId = event['source']['userId']
     except:
@@ -146,6 +145,8 @@ def event_handle(event,json_line):
         replyObj = StickerSendMessage(package_id=str(1),sticker_id=str(sk_id))
         line_bot_api.reply_message(rtoken, replyObj)
         return ''
+
+   
 
     if msgType == "text":
         msg = str(event["message"]["text"])
