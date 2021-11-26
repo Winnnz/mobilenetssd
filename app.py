@@ -149,16 +149,16 @@ def event_handle(event,json_line):
 
     if msgType == "text":
         msg = str(event["message"]["text"])
-        if (msg == "สวัสดี") :
+        if msg == "สวัสดี" :
             replyObj = TextSendMessage(text="ดีด้วย")
             line_bot_api.reply_message(rtoken, replyObj)
-        elif (msg == "มีของมั้ย??") :
+        elif msg == "มีของมั้ย??" :
             replyObj = TextSendMessage(text="มีดิ แต่แรงนะ")
             line_bot_api.reply_message(rtoken, replyObj)
-        elif (msg == "จัดมาเลยกี่บาท") :
+        elif msg == "จัดมาเลยกี่บาท" :
             replyObj = TextSendMessage(text="2เม็ด4,000กันเอง")
             line_bot_api.reply_message(rtoken, replyObj)
-        elif (msg == "ไม่ซื้อละแพงไป") :
+        elif msg == "ไม่ซื้อละแพงไป" :
             replyObj = TextSendMessage(text="ใจเย็นดิลดให้เหลือ3เม็ด3,000พอ")
             line_bot_api.reply_message(rtoken, elif msg == "covid" :
         elif msg == "covid" :   
@@ -177,7 +177,7 @@ def event_handle(event,json_line):
             headers = request.headers
             json_headers = ({k:v for k, v in headers.items()})
             json_headers.update({'Host':'bots.dialogflow.com'})
-            url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/682de730-0e9e-4434-8b48-cc2f6ee918a7"
+            url = "https://bots.dialogflow.com/line/682de730-0e9e-4434-8b48-cc2f6ee918a7/webhook"
             requests.post(url,data=json_line, headers=json_headers)
     elif msgType == "image":
         try:
